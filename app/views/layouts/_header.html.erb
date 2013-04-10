@@ -10,7 +10,8 @@
       </a>
  
       <!-- Be sure to leave the brand out there if you want it shown -->
-      <a class="brand" href="#">Print On Rails</a>
+      
+      <%= link_to "Print On Rails", root_path, class: "brand" %>
  
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse">
@@ -19,8 +20,12 @@
   				<li><%= link_to "about", about_path %></li>
 				</ul>
 				<ul class="nav pull-right">
-  				<li><%= link_to "log In", '#' %></li>
-  				<li><%= link_to "Register", '#' %></li>
+          <% if user_signed_in? %>
+    				<li><%= link_to "Logout", destroy_user_session_path, method: :delete   %></li>
+            <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+          <% else %>
+            <li><%= link_to "log In", new_user_session_path %></li>
+          <% end %>
 				</ul>
       	
 				

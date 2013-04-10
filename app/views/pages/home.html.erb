@@ -1,3 +1,7 @@
+<% if user_signed_in? %>
+  I will probably show a dashboard for the user role here.
+<% else %>
+
 <div class="sold">
 	<div class="row">
   	<div class="span4">
@@ -8,10 +12,9 @@
     				<center><legend class="legend">Sign Up Now!</legend></center>
     					<input class="input-block-level" type="text" placeholder="Email"><br>
     					<input class="input-block-level" type="text" placeholder="Password">
-    					<button type="submit" class="btn btn-large btn-block btn-primary">Sign Up Now!</button>
-    					<button class="btn btn-large btn-block btn-warning">Log In</button>
-  						
-  				</fieldset>
+              <%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-large btn-block btn-primary" %>
+              <%= link_to "Log In", new_user_session_path, class: "btn btn-large btn-block btn-warning" %>
+    			</fieldset>
 				</form>
   			
   	</div>
@@ -27,12 +30,4 @@
   		</div>
 </div>
 </div>
-
-<div class="empty">
-
-</div>
-
-
-
-
-
+<% end %>
