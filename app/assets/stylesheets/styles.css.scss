@@ -1,0 +1,60 @@
+$navbarBackgroundHighlight: white;
+$navbarBackground: white;
+$navbarHeight: 20px;
+$navbarBrandColor: #f89406;
+$navbarLinkColor: #333333;
+
+@import 'bootstrap';
+
+body {
+	padding-top: 60px;
+}
+
+@import 'bootstrap-responsive';
+
+.navbar-inner {
+	@include box-shadow(none !important);
+	border: 0;
+}
+
+.embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16/9 ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.embed-container iframe,
+.embed-container object,
+.embed-container embed {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.sold {
+	background-color: #333
+
+}
+
+h3.heading3 {
+	color: #f89406;
+
+}
+
+p.Description {
+	color: #999;
+}
+
+
+div.span4 {
+	margin-left: 70px;
+	
+}
+
+.legend {
+	color: #f89406
+}
