@@ -1,8 +1,10 @@
 <tr>
+	<% if current_user == project.user %>
+	<td><%= image_tag pin.image(:medium) %></td>
   <td><%= project.description %></td>
-  <td><%= link_to 'Show', project %></td>
-  <% if current_user == project.user %>
-  <td><%= link_to 'Edit', edit_project_path(project) %></td>
-  <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td><%= link_to '', project, class: "icon-eye-open" %></td>
+  
+  <td><%= link_to '', edit_project_path(project), class: "icon-edit" %></td>
+  <td><%= link_to '', project, class: "icon-trash", method: :delete, data: { confirm: 'This will delete the projects data forever. In the future I will not allow this from this page, but an archive button will soon replace this.' } %></td>
   <% end %>
 </tr>
