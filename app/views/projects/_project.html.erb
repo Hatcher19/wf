@@ -1,6 +1,6 @@
 <tr>
 	<% if current_user == project.user %>
-	<td><%= image_tag pin.image(:medium) %></td>
+	<td><%= image_tag project.image(:medium) %></td>
   <td><%= project.description %></td>
   <td><%= link_to '', project, class: "icon-eye-open" %></td>
   

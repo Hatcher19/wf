@@ -8,5 +8,5 @@ class Project < ActiveRecord::Base
                             content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] },
                             size: { less_than: 5.megabytes }
   belongs_to :user
-  has_attached_file :image, styles: { medium: "300x300>"}
+  has_attached_file :image, styles: { medium: "100x100>"}
 end
