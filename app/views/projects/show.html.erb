@@ -2,15 +2,16 @@
 	<div class="span6 offset3">
 		<div class="well">
 			<p>
-				<b>Description:</b>
 	  		<%= @project.description %>
 			</p>
+			<p>
+	  		<%= @project.user.name %>
+			</p>
+			<% if current_user == @project.user %>
+
 			<%= link_to 'Edit', edit_project_path(@project) %> |
+			<% end %>
 			<%= link_to 'Back', projects_path %>
 		</div>
 	</div>
 </div>
-
-
-
-
