@@ -1,5 +1,8 @@
 <% if user_signed_in? %>
-  This is the Homepage for signed in users. Think of the best way to utilize this page.
+  <%= link_to new_project_path, class: 'btn-mini btn-primary btn' do %>
+  <i class="icon-plus"></i> New Project
+<% end %>
+  
 <% else %>
 
 <div class="sold">

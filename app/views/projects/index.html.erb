@@ -1,9 +1,12 @@
 <center><h1>Production</h1></center>
+<%= link_to new_project_path, class: 'btn-mini btn-primary btn' do %>
+  <i class="icon-plus"></i> New Project
+<% end %>
 
 <table class="table table-striped">
 	<thead>
 	  <tr>
-	  	<th></th>
+	    <th>Name</th>
 	    <th>Description</th>
 	    <th>View</th>
 	    <th>Edit</th>
@@ -16,11 +19,3 @@
 </table>
 
 <br />
-
-<%= link_to 'New Project', new_project_path, class: "icon-plus", class: "btn btn-large" %>
-<%= link_to '', new_project_path, class: "icon-plus" %>
-
-
-
-
-

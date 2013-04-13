@@ -27,6 +27,7 @@ before_filter :authenticate_user!, except: [:index]
   # GET /projects/new.json
   def new
     @project = current_user.projects.new
+    
 
     respond_to do |format|
       format.html # new.html.erb
