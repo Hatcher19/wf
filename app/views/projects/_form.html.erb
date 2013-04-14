@@ -1,10 +1,12 @@
-<%= simple_form_for(@project, html: { class: "form-horizontal"}) do |f| %>
+<%= simple_form_for(@project) do |f| %>
   <%= f.error_notification %>
-  	
-  <%= f.input :Name, as: :text, input_html:{ rows: "1"} %>
-  <%= f.input :description, as: :text, input_html:{ rows: "3"} %>
+
+  <div class="form-inputs">
+  	<%= f.input :project_name %>
+    <%= f.input :comments %>
+  </div>
 
   <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-primary" %>
+    <%= f.button :submit %>
   </div>
 <% end %>

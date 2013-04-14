@@ -1,7 +1,7 @@
 <tr>
 	<% if current_user == project.user %>
-  <td><%= project.Name %></td>
-  <td><%= project.description %></td>
+  <td><%= project.project_name %></td>
+  <td><%= project.comments %></td>
   <td><%= link_to '', project, class: "icon-eye-open" %></td>
   <td><%= link_to '', edit_project_path(project), class: "icon-edit" %></td>
   <td><%= link_to '', project, class: "icon-trash", method: :delete, data: { confirm: 'This will delete the projects data forever. In the future I will not allow this from this page, but an archive button will soon replace this.' } %></td>

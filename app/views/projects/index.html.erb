@@ -1,21 +1,23 @@
-<center><h1>Production</h1></center>
-<%= link_to new_project_path, class: 'btn-mini btn-primary btn' do %>
-  <i class="icon-plus"></i> New Project
-<% end %>
+<h1>Listing projects</h1>
+<%= link_to '', new_project_path, class: "icon-plus" %>
 
 <table class="table table-striped">
-	<thead>
-	  <tr>
-	    <th>Name</th>
-	    <th>Description</th>
-	    <th>View</th>
-	    <th>Edit</th>
-	    <th>Delete</th>
-	  </tr>
-  </thead>
-  	<tbody>
-  		<%= render @projects %>
-  	</tbody>
+  <tr>
+    <th>Project Name</th>
+    <th>Comments</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= project.project_name %></td>
+    <td><%= project.comments %></td>
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
 </table>
 
 <br />

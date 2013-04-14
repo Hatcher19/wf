@@ -1,20 +1,12 @@
-<div class="row">
-	<div class="span6 offset3">
-		<div class="well">
-			<p>
-	  		<strong>Name:</strong> <%= @project.Name %>
-			</p>
-			<p>
-	  		<strong>Description:</strong> <%= @project.description %>
-			</p>
-			<p>
-	  		<strong>User:</strong> <%= @project.user.name %>
-			</p>
-			<% if current_user == @project.user %>
+<p id="notice"><%= notice %></p>
 
-			<%= link_to '', edit_project_path(@project), class: "icon-edit" %> |
-			<% end %>
-			<%= link_to '', projects_path, class: "icon-arrow-left" %>
-		</div>
-	</div>
-</div>
+<p>
+  <b>Comments:</b>
+  <%= @project.comments %>
+  <b>Project Name:</b>
+  <%= @project.project_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

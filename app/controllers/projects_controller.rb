@@ -1,10 +1,8 @@
 class ProjectsController < ApplicationController
-before_filter :authenticate_user!, except: [:index]
-
   # GET /projects
   # GET /projects.json
   def index
-    @projects = current_user.projects.all
+    @projects = Project.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -26,8 +24,7 @@ before_filter :authenticate_user!, except: [:index]
   # GET /projects/new
   # GET /projects/new.json
   def new
-    @project = current_user.projects.new
-    
+    @project = Project.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -37,13 +34,13 @@ before_filter :authenticate_user!, except: [:index]
 
   # GET /projects/1/edit
   def edit
-    @project = current_user.projects.find(params[:id])
+    @project = Project.find(params[:id])
   end
 
   # POST /projects
   # POST /projects.json
   def create
-    @project = current_user.projects.new(params[:project])
+    @project = Project.new(params[:project])
 
     respond_to do |format|
       if @project.save
@@ -59,7 +56,7 @@ before_filter :authenticate_user!, except: [:index]
   # PUT /projects/1
   # PUT /projects/1.json
   def update
-    @project = current_user.projects.find(params[:id])
+    @project = Project.find(params[:id])
 
     respond_to do |format|
       if @project.update_attributes(params[:project])
@@ -75,7 +72,7 @@ before_filter :authenticate_user!, except: [:index]
   # DELETE /projects/1
   # DELETE /projects/1.json
   def destroy
-    @project = current_user.projects.find(params[:id])
+    @project = Project.find(params[:id])
     @project.destroy
 
     respond_to do |format|
