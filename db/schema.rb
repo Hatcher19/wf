@@ -11,7 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130415022145) do
+ActiveRecord::Schema.define(:version => 20130415134148) do
+
+  create_table "line_items", :force => true do |t|
+    t.integer  "line_item_quantity"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "lineitems", :force => true do |t|
+    t.integer  "line_item_quantity"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  create_table "product_line_items", :force => true do |t|
+    t.integer  "product_line_item_quantity"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
 
   create_table "projects", :force => true do |t|
     t.string   "comments"
@@ -39,6 +57,14 @@ ActiveRecord::Schema.define(:version => 20130415022145) do
     t.boolean  "print_location_back_tag"
     t.boolean  "print_location_sleeve_left"
     t.boolean  "print_location_sleeve_right"
+    t.string   "customer_name"
+    t.string   "billing_name"
+    t.string   "billing_address"
+    t.string   "billing_city"
+    t.string   "billing_state"
+    t.string   "billing_zip"
+    t.string   "billing_email"
+    t.string   "billing_phone"
   end
 
   create_table "users", :force => true do |t|

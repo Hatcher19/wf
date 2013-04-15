@@ -20,5 +20,12 @@ class Project < ActiveRecord::Base
 	attr_accessible :print_location_back_tag
 	attr_accessible :print_location_sleeve_left
 	attr_accessible :print_location_sleeve_right
+	attr_accessible :billing_name
+	attr_accessible :billing_address
+	attr_accessible :billing_city
+	attr_accessible :billing_state
+	attr_accessible :billing_zip
+	attr_accessible :billing_email
+	attr_accessible :billing_phone
   attr_accessible :comments
 end

@@ -1,4 +1,13 @@
 WF::Application.routes.draw do
+  resources :product_line_items
+
+
+  resources :line_items
+
+
+  resources :lineitems
+
+
   resources :pins
 
 
