@@ -2,19 +2,110 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-  	<%= f.input :project_type, :collection => [['Screen Printing'], ['Embroidery']], as: :check_boxes %>
-  	<%= f.input :project_name %>
-  	<%= f.input :new_order %>
-  	<%= f.input :re_order %>
-  	<%= f.input :shipping_name %>
-  	<%= f.input :shipping_address %>
-  	<%= f.input :shipping_city %>
-  	<%= f.input :shipping_state %>
-  	<%= f.input :shipping_zip %>
-  	<%= f.input :ink_color_front %>
-  	<%= f.input :ink_color_back %>
-  	<%= f.input :ink_color_sleeve %>
-    <%= f.input :comments %>
+  	<div>
+  		<h2>What type of project?</h2>
+	  		<div class="progress progress-striped active">
+	  			<div class="bar" style="width: 11%;">Step 1 0f 9</div>
+				</div>
+				<div>
+					<%= f.input :project_type, :collection => [['Screen Printing'], ['Embroidery']], as: :check_boxes %>
+				</div> 
+		</div>
+
+		<div>
+  		<h2>Is this a New or Re-Order?</h2>
+	  		<div class="progress progress-striped active">
+	  			<div class="bar" style="width: 22%;">Step 2 0f 9</div>
+				</div>
+				<div>
+					<%= f.input :new_order %>
+  				<%= f.input :re_order %>
+				</div> 
+		</div>
+
+		<div>
+			<div class="progress progress-striped active">
+	  			<div class="bar" style="width: 33%;">Step 3 0f 9</div>
+				</div>
+  		<h2>Name and Due Date for this Project.</h2>
+				<div>
+					<%= f.input :project_name %>
+  				<%= f.input :due_date %>
+				</div> 
+		</div>
+
+		<div>
+			<div class="progress progress-striped active">
+	  			<div class="bar" style="width: 44%;">Step 4 0f 9</div>
+				</div>
+  		<h2>Shipping Information</h2>
+				<div>
+					<%= f.input :need_shipping %>
+			  	<%= f.input :shipping_name %>
+			  	<%= f.input :shipping_address %>
+			  	<%= f.input :shipping_city %>
+			  	<%= f.input :shipping_state %>
+			  	<%= f.input :shipping_zip %>
+				</div> 
+		</div>
+
+		<div>
+			<div class="progress progress-striped active">
+	  			<div class="bar" style="width: 55%;">Step 5 0f 9</div>
+				</div>
+  		<h2>Product Information</h2>
+				<div>
+					
+				</div> 
+		</div>
+
+		<div>
+			<div class="progress progress-striped active">
+	  			<div class="bar" style="width: 66%;">Step 6 0f 9</div>
+				</div>
+  		<h2>Print Location</h2>
+				<div>
+					<%= f.input :print_location_front %>
+			  	<%= f.input :print_location_front_left %>
+			  	<%= f.input :print_location_front_right %>
+			  	<%= f.input :print_location_back %>
+			  	<%= f.input :print_location_back_tag %>
+			  	<%= f.input :print_location_sleeve_left %>
+			  	<%= f.input :print_location_sleeve_right %>
+				</div> 
+		</div>
+
+		<div>
+			<div class="progress progress-striped active">
+	  			<div class="bar" style="width: 77%;">Step 7 0f 9</div>
+				</div>
+  		<h2>Ink Color</h2>
+				<div>
+					<%= f.input :ink_color_front %>
+			  	<%= f.input :ink_color_back %>
+			  	<%= f.input :ink_color_sleeve %>
+				</div> 
+		</div>
+
+		<div>
+			<div class="progress progress-striped active">
+	  			<div class="bar" style="width: 88%;">Step 8 0f 9</div>
+				</div>
+  		<h2>Upload Artwork</h2>
+				<div>
+					
+				</div> 
+		</div>
+
+		<div>
+			<div class="progress progress-striped active">
+	  			<div class="bar" style="width: 100%;">Step 9 0f 9</div>
+				</div>
+  		<h2>Additional Comments</h2>
+				<div>
+					<%= f.input :comments %>
+				</div> 
+		</div>
   </div>
 
   <div class="form-actions">

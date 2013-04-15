@@ -11,12 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130415012256) do
+ActiveRecord::Schema.define(:version => 20130415022145) do
 
   create_table "projects", :force => true do |t|
     t.string   "comments"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.string   "project_name"
     t.string   "shipping_name"
     t.string   "shipping_address"
@@ -30,6 +30,15 @@ ActiveRecord::Schema.define(:version => 20130415012256) do
     t.boolean  "project_type"
     t.boolean  "new_order"
     t.boolean  "re_order"
+    t.date     "due_date"
+    t.boolean  "need_shipping"
+    t.boolean  "print_location_front"
+    t.boolean  "print_location_front_left"
+    t.boolean  "print_location_front_right"
+    t.boolean  "print_location_back"
+    t.boolean  "print_location_back_tag"
+    t.boolean  "print_location_sleeve_left"
+    t.boolean  "print_location_sleeve_right"
   end
 
   create_table "users", :force => true do |t|
