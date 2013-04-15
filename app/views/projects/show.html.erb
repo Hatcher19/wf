@@ -3,9 +3,72 @@
 <p>
   <b>Comments:</b>
   <%= @project.comments %>
+</p>
+
+<p>
+  <b>Type:</b>
+  <%= @project.project_type %>
+</p>
+
+<p>
   <b>Project Name:</b>
   <%= @project.project_name %>
 </p>
+
+<p>
+  <b>Shipping to Name:</b>
+  <%= @project.shipping_name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%= @project.shipping_address %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @project.shipping_city %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @project.shipping_state %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @project.shipping_zip %>
+</p>
+
+<p>
+  <b>Ink color(s) on Front:</b>
+  <%= @project.ink_color_front %>
+</p>
+
+<p>
+  <b>Ink color(s) on Back:</b>
+  <%= @project.ink_color_back %>
+</p>
+
+<p>
+  <b>Ink color(s) on sleeve:</b>
+  <%= @project.ink_color_sleeve %>
+</p>
+
+<p>
+  <b>New Order?:</b>
+  <%= @project.new_order %>
+</p>
+
+<p>
+  <b>Re-Order?:</b>
+  <%= @project.re_order %>
+</p>
+
+
+
+
+
 
 
 <%= link_to 'Edit', edit_project_path(@project) %> |

@@ -1,8 +1,19 @@
-<%= simple_form_for(@project) do |f| %>
+<%= simple_form_for(@project, html: { class: "form-horizontal"}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
+  	<%= f.input :project_type, :collection => [['Screen Printing'], ['Embroidery']], as: :check_boxes %>
   	<%= f.input :project_name %>
+  	<%= f.input :new_order %>
+  	<%= f.input :re_order %>
+  	<%= f.input :shipping_name %>
+  	<%= f.input :shipping_address %>
+  	<%= f.input :shipping_city %>
+  	<%= f.input :shipping_state %>
+  	<%= f.input :shipping_zip %>
+  	<%= f.input :ink_color_front %>
+  	<%= f.input :ink_color_back %>
+  	<%= f.input :ink_color_sleeve %>
     <%= f.input :comments %>
   </div>
 

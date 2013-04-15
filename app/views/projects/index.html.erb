@@ -4,7 +4,9 @@
 <table class="table table-striped">
   <tr>
     <th>Project Name</th>
-    <th>Comments</th>
+    <th>Project Type</th>
+    <th>New Order</th>
+    <th>Re-Order</th>
     <th>View</th>
     <th>Edit</th>
     <th>Delete</th>
@@ -12,7 +14,9 @@
 <% @projects.each do |project| %>
   <tr>
     <td><%= project.project_name %></td>
-    <td><%= project.comments %></td>
+    <td><%= project.project_type %></td>
+    <td><%= project.new_order %></td>
+    <td><%= project.re_order %></td>
     <td><%= link_to 'Show', project %></td>
     <td><%= link_to 'Edit', edit_project_path(project) %></td>
     <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>

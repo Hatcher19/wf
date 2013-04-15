@@ -11,13 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130414210921) do
+ActiveRecord::Schema.define(:version => 20130415012256) do
 
   create_table "projects", :force => true do |t|
     t.string   "comments"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
     t.string   "project_name"
+    t.string   "shipping_name"
+    t.string   "shipping_address"
+    t.string   "shipping_city"
+    t.string   "shipping_state"
+    t.string   "shipping_zip"
+    t.string   "ink_color"
+    t.string   "ink_color_front"
+    t.string   "ink_color_back"
+    t.string   "ink_color_sleeve"
+    t.boolean  "project_type"
+    t.boolean  "new_order"
+    t.boolean  "re_order"
   end
 
   create_table "users", :force => true do |t|
