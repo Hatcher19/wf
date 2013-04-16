@@ -4,6 +4,7 @@ WF::Application.routes.draw do
   end
   devise_for :users
   get 'about' => 'pages#about'
+  get 'Production' => 'projects#index'
   root :to => 'pages#home'
 
 

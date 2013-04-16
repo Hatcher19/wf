@@ -1,9 +1,12 @@
 class ProjectsController < ApplicationController
-  before_filter :authenticate_user!, except: []
+  before_filter :authenticate_user!
+
   # GET /projects
   # GET /projects.json
   def index
     @projects = Project.all
+    
+
 
     respond_to do |format|
       format.html # index.html.erb

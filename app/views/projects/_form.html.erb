@@ -1,4 +1,4 @@
-<%= simple_form_for([@project, @project.product_line_items.build], html: { class: "form-horizontal"}) do |f| %>
+<%= simple_form_for(@project, html: { class: "form-horizontal"}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -57,6 +57,7 @@
 					</div>
 					<div>
 						<%= f.input :need_shipping %>
+						<%= f.input :same_as_billing %>
 				  	<%= f.input :shipping_name %>
 				  	<%= f.input :shipping_address %>
 				  	<%= f.input :shipping_city %>
@@ -71,7 +72,7 @@
 		  			<div class="bar" style="width: 60%;">Step 6 0f 10</div>
 					</div>
 					<div>
-					
+						
 					</div>
 			</div>
 

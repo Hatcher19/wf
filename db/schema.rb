@@ -11,43 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130415201708) do
-
-  create_table "line_items", :force => true do |t|
-    t.integer  "line_item_quantity"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
-
-  create_table "lineitems", :force => true do |t|
-    t.integer  "line_item_quantity"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
-  end
-
-  create_table "product_line_items", :force => true do |t|
-    t.integer  "product_line_item_quantity"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-    t.string   "style"
-    t.string   "color"
-    t.integer  "yxs"
-    t.integer  "ys"
-    t.integer  "ym"
-    t.integer  "yl"
-    t.integer  "yxl"
-    t.integer  "xs"
-    t.integer  "small"
-    t.integer  "medium"
-    t.integer  "large"
-    t.integer  "xl"
-    t.integer  "xxl"
-    t.integer  "threexl"
-    t.integer  "fourxl"
-    t.integer  "fivexl"
-    t.integer  "product_id"
-    t.integer  "project_id"
-  end
+ActiveRecord::Schema.define(:version => 20130416134732) do
 
   create_table "projects", :force => true do |t|
     t.string   "comments"
@@ -59,7 +23,6 @@ ActiveRecord::Schema.define(:version => 20130415201708) do
     t.string   "shipping_city"
     t.string   "shipping_state"
     t.string   "shipping_zip"
-    t.string   "ink_color"
     t.string   "ink_color_front"
     t.string   "ink_color_back"
     t.string   "ink_color_sleeve"
@@ -75,7 +38,6 @@ ActiveRecord::Schema.define(:version => 20130415201708) do
     t.boolean  "print_location_back_tag"
     t.boolean  "print_location_sleeve_left"
     t.boolean  "print_location_sleeve_right"
-    t.string   "customer_name"
     t.string   "billing_name"
     t.string   "billing_address"
     t.string   "billing_city"
@@ -83,7 +45,11 @@ ActiveRecord::Schema.define(:version => 20130415201708) do
     t.string   "billing_zip"
     t.string   "billing_email"
     t.string   "billing_phone"
+    t.integer  "user_id"
+    t.boolean  "same_as_billing"
   end
+
+  add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

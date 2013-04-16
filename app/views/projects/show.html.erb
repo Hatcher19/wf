@@ -1,4 +1,6 @@
-<p id="notice">Invoice Number:<%= notice %></p>
+<p id="notice"><%= notice %></p>
+
+
 
 <p>
   <b>Comments:</b>
@@ -145,11 +147,6 @@
   <%= @project.billing_phone %>
 </p>
 
-
-
-
-
-
-
 <%= link_to '', edit_project_path(@project), class: "icon-edit" %> |
 <%= link_to '', projects_path, class: "icon-arrow-left" %>
+

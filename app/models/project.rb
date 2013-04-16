@@ -5,6 +5,7 @@ class Project < ActiveRecord::Base
 	attr_accessible :due_date
 	attr_accessible :project_name
 	attr_accessible :need_shipping
+	attr_accessible :same_as_billing
 	attr_accessible :shipping_name
 	attr_accessible :shipping_address
 	attr_accessible :shipping_city
@@ -29,7 +30,8 @@ class Project < ActiveRecord::Base
 	attr_accessible :billing_phone
   attr_accessible :comments
 
+
   belongs_to :user
-  has_many :product_line_items
-  validates :user, presence: true
+  
+    
 end
