@@ -17,9 +17,9 @@
     <td><%= project.project_type %></td>
     <td><%= project.new_order %></td>
     <td><%= project.due_date %></td>
-    <td><%= link_to 'Show', project %></td>
-    <td><%= link_to 'Edit', edit_project_path(project) %></td>
-    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to '', project, class: "icon-eye-open" %></td>
+    <td><%= link_to '', edit_project_path(project), class: "icon-edit" %></td>
+    <td><%= link_to '', project, method: :delete, data: { confirm: 'Are you sure?' }, class: "icon-remove" %></td>
   </tr>
 <% end %>
 </table>

@@ -28,4 +28,8 @@ class Project < ActiveRecord::Base
 	attr_accessible :billing_email
 	attr_accessible :billing_phone
   attr_accessible :comments
+
+  belongs_to :user
+  has_many :product_line_items
+  validates :user, presence: true
 end

@@ -1,127 +1,127 @@
-<%= simple_form_for(@project, html: { class: "form-horizontal"}) do |f| %>
+<%= simple_form_for([@project, @project.product_line_items.build], html: { class: "form-horizontal"}) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-  	<div>
-  		<h2>What type of project?</h2>
-	  		<div class="progress progress-striped active">
-	  			<div class="bar" style="width: 10%;">Step 1 0f 10</div>
-				</div>
-				<div>
-					<%= f.input :project_type, :collection => [['Screen Printing'], ['Embroidery']], as: :check_boxes %>
-				</div> 
-		</div>
+		<h2>What type of project?</h2>
+	  	<div class="well">
+		  		<div class="progress progress-striped active">
+		  			<div class="bar" style="width: 10%;">Step 1 0f 10</div>
+					</div>
+					<div>
+						<%= f.input :project_type, :collection => [['Screen Printing'], ['Embroidery']], as: :check_boxes %>
+					</div> 
+			</div>
 
-		<div>
-  		<h2>Is this a New or Re-Order?</h2>
-	  		<div class="progress progress-striped active">
-	  			<div class="bar" style="width: 20%;">Step 2 0f 10</div>
-				</div>
-				<div>
-					<%= f.input :new_order %>
-  				<%= f.input :re_order %>
-				</div> 
-		</div>
+		<h2>Is this a New or Re-Order?</h2>
+			<div class="well">
+		  		<div class="progress progress-striped active">
+		  			<div class="bar" style="width: 20%;">Step 2 0f 10</div>
+					</div>
+					<div>
+						<%= f.input :new_order %>
+	  				<%= f.input :re_order %>
+					</div> 
+			</div>
 
-		<div>
-			<div class="progress progress-striped active">
-	  			<div class="bar" style="width: 30%;">Step 3 0f 10</div>
-				</div>
-  		<h2>Name and Due Date for this Project.</h2>
-				<div>
-					<%= f.input :project_name %>
-  				<%= f.input :due_date %>
-				</div> 
-		</div>
+		<h2>Name and Due Date for this Project.</h2>
+			<div class="well">
+				<div class="progress progress-striped active">
+		  			<div class="bar" style="width: 30%;">Step 3 0f 10</div>
+					</div>
+					<div>
+						<%= f.input :project_name %>
+	  				<%= f.input :due_date %>
+					</div> 
+			</div>
 
-		<div>
-			<div class="progress progress-striped active">
-	  			<div class="bar" style="width: 40%;">Step 4 0f 10</div>
-				</div>
-  		<h2>Customer Information</h2>
-				<div>
-					<%= f.input :billing_name %>
-					<%= f.input :billing_email %>
-					<%= f.input :billing_phone %>
-					<%= f.input :billing_address %>
-					<%= f.input :billing_city %>
-					<%= f.input :billing_state %>
-					<%= f.input :billing_zip %>
-				</div> 
-		</div>
+		<h2>Customer Information</h2>
+			<div class="well">
+				<div class="progress progress-striped active">
+		  			<div class="bar" style="width: 40%;">Step 4 0f 10</div>
+					</div>
+					<div>
+						<%= f.input :billing_name %>
+						<%= f.input :billing_email %>
+						<%= f.input :billing_phone %>
+						<%= f.input :billing_address %>
+						<%= f.input :billing_city %>
+						<%= f.input :billing_state %>
+						<%= f.input :billing_zip %>
+					</div> 
+			</div>
 
-		<div>
-			<div class="progress progress-striped active">
-	  			<div class="bar" style="width: 50%;">Step 5 0f 10</div>
-				</div>
-  		<h2>Shipping Information</h2>
-				<div>
-					<%= f.input :need_shipping %>
-			  	<%= f.input :shipping_name %>
-			  	<%= f.input :shipping_address %>
-			  	<%= f.input :shipping_city %>
-			  	<%= f.input :shipping_state %>
-			  	<%= f.input :shipping_zip %>
-				</div> 
-		</div>
+		<h2>Shipping Information</h2>
+			<div class="well">
+				<div class="progress progress-striped active">
+		  			<div class="bar" style="width: 50%;">Step 5 0f 10</div>
+					</div>
+					<div>
+						<%= f.input :need_shipping %>
+				  	<%= f.input :shipping_name %>
+				  	<%= f.input :shipping_address %>
+				  	<%= f.input :shipping_city %>
+				  	<%= f.input :shipping_state %>
+				  	<%= f.input :shipping_zip %>
+					</div> 
+			</div>
 
-		<div>
-			<div class="progress progress-striped active">
-	  			<div class="bar" style="width: 60%;">Step 6 0f 10</div>
-				</div>
-  		<h2>Product Information</h2>
-				<div>
+		<h2>Product Information</h2>
+			<div class="well">
+				<div class="progress progress-striped active">
+		  			<div class="bar" style="width: 60%;">Step 6 0f 10</div>
+					</div>
+					<div>
 					
-				</div> 
-		</div>
+					</div>
+			</div>
 
-		<div>
-			<div class="progress progress-striped active">
-	  			<div class="bar" style="width: 70%;">Step 7 0f 10</div>
-				</div>
-  		<h2>Print Location</h2>
-				<div>
-					<%= f.input :print_location_front %>
-			  	<%= f.input :print_location_front_left %>
-			  	<%= f.input :print_location_front_right %>
-			  	<%= f.input :print_location_back %>
-			  	<%= f.input :print_location_back_tag %>
-			  	<%= f.input :print_location_sleeve_left %>
-			  	<%= f.input :print_location_sleeve_right %>
-				</div> 
-		</div>
+		<h2>Print Location</h2>
+			<div class="well">
+				<div class="progress progress-striped active">
+		  			<div class="bar" style="width: 70%;">Step 7 0f 10</div>
+					</div>
+					<div>
+						<%= f.input :print_location_front %>
+				  	<%= f.input :print_location_front_left %>
+				  	<%= f.input :print_location_front_right %>
+				  	<%= f.input :print_location_back %>
+				  	<%= f.input :print_location_back_tag %>
+				  	<%= f.input :print_location_sleeve_left %>
+				  	<%= f.input :print_location_sleeve_right %>
+					</div> 
+			</div>
 
-		<div>
-			<div class="progress progress-striped active">
-	  			<div class="bar" style="width: 80%;">Step 8 0f 10</div>
-				</div>
-  		<h2>Ink Color</h2>
-				<div>
-					<%= f.input :ink_color_front %>
-			  	<%= f.input :ink_color_back %>
-			  	<%= f.input :ink_color_sleeve %>
-				</div> 
-		</div>
+		<h2>Ink Color</h2>
+			<div class="well">
+				<div class="progress progress-striped active">
+		  			<div class="bar" style="width: 80%;">Step 8 0f 10</div>
+					</div>
+					<div>
+						<%= f.input :ink_color_front %>
+				  	<%= f.input :ink_color_back %>
+				  	<%= f.input :ink_color_sleeve %>
+					</div> 
+			</div>
 
-		<div>
-			<div class="progress progress-striped active">
-	  			<div class="bar" style="width: 90%;">Step 9 0f 10</div>
-				</div>
-  		<h2>Upload Artwork</h2>
-				<div>
-					
-				</div> 
-		</div>
+		<h2>Upload Artwork</h2>
+			<div class="well">
+				<div class="progress progress-striped active">
+		  			<div class="bar" style="width: 90%;">Step 9 0f 10</div>
+					</div>
+					<div>
+						
+					</div> 
+			</div>
 
-		<div>
-			<div class="progress progress-striped active">
-	  			<div class="bar" style="width: 100%;">Step 10 0f 10</div>
-				</div>
-  		<h2>Additional Comments</h2>
-				<div>
-					<%= f.input :comments %>
-				</div> 
-		</div>
+		<h2>Additional Comments</h2>
+			<div class="well">
+				<div class="progress progress-striped active">
+		  			<div class="bar" style="width: 100%;">Step 10 0f 10</div>
+					</div>
+					<div>
+						<%= f.input :comments %>
+					</div> 
+			</div>
   </div>
 
   <div class="form-actions">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130415134148) do
+ActiveRecord::Schema.define(:version => 20130415201708) do
 
   create_table "line_items", :force => true do |t|
     t.integer  "line_item_quantity"
@@ -29,6 +29,24 @@ ActiveRecord::Schema.define(:version => 20130415134148) do
     t.integer  "product_line_item_quantity"
     t.datetime "created_at",                 :null => false
     t.datetime "updated_at",                 :null => false
+    t.string   "style"
+    t.string   "color"
+    t.integer  "yxs"
+    t.integer  "ys"
+    t.integer  "ym"
+    t.integer  "yl"
+    t.integer  "yxl"
+    t.integer  "xs"
+    t.integer  "small"
+    t.integer  "medium"
+    t.integer  "large"
+    t.integer  "xl"
+    t.integer  "xxl"
+    t.integer  "threexl"
+    t.integer  "fourxl"
+    t.integer  "fivexl"
+    t.integer  "product_id"
+    t.integer  "project_id"
   end
 
   create_table "projects", :force => true do |t|

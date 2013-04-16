@@ -16,13 +16,7 @@ class LineItemsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create line_item" do
-    assert_difference('LineItem.count') do
-      post :create, line_item: { line_item_quantity: @line_item.line_item_quantity }
-    end
-
-    assert_redirected_to line_item_path(assigns(:line_item))
-  end
+  
 
   test "should show line_item" do
     get :show, id: @line_item
@@ -34,10 +28,7 @@ class LineItemsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update line_item" do
-    put :update, id: @line_item, line_item: { line_item_quantity: @line_item.line_item_quantity }
-    assert_redirected_to line_item_path(assigns(:line_item))
-  end
+ 
 
   test "should destroy line_item" do
     assert_difference('LineItem.count', -1) do

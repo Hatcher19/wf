@@ -1,23 +1,9 @@
 WF::Application.routes.draw do
-  resources :product_line_items
-
-
-  resources :line_items
-
-
-  resources :lineitems
-
-
-  resources :pins
-
-
-  resources :projects
-
-
+  resources :projects do
+    resources :product_line_items
+  end
   devise_for :users
-
   get 'about' => 'pages#about'
-
   root :to => 'pages#home'
 
 
