@@ -1,39 +1,29 @@
+<!-- This is the Home page for logged in users -->
 <% if user_signed_in? %>
-  <%= link_to new_project_path, class: 'btn-mini btn-primary btn' do %>
-  <i class="icon-plus"></i> New Project
-<% end %>
-  
+  <%= link_to "New Order", new_order_path, class: "btn btn-primary btn-large" %>
+  <%= link_to "Production", orders_path, class: "btn btn-primary btn-large" %>
+<!-- This is the Home page for logged in users --> 
 <% else %>
-
-<div class="sold">
-	<div class="row">
-  	<div class="span4">
-  		<center><h3 class="heading3">Print On Rails</h3></center>
-  		<center><P class="Description">Order Management Software for the Screen Print and Embroidery industry. No matter how big or how small, Print On Rails was designed to make your business run smoothly.</p></center>
-  			<form class="Sign_up">
-  				<fieldset>
-    				<center><legend class="legend">Sign Up Now!</legend></center>
-    					<input class="input-block-level" type="text" placeholder="Email"><br>
-    					<input class="input-block-level" type="text" placeholder="Password">
-              <%= link_to "Sign Up Now!", new_user_registration_path, class: "btn btn-large btn-block btn-primary" %>
-              <%= link_to "Log In", new_user_session_path, class: "btn btn-large btn-block btn-warning" %>
-    			</fieldset>
-				</form>
-  			
-  	</div>
-  	<div class="span8 pull-right">
-			<div class="embed-container">
-				<center>
-	   			<iframe 
-		      src="http://player.vimeo.com/video/22669590?title=0&amp;byline=0&amp;portrait=0"frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
-	   			</iframe>
-   			</center>
+  <div class="row homepage"><br><br><br><br>
+      <div class="span5">
+        <div class="hero-unit signup">
+          <center>
+            <h2 class="signup">Let's get to Work.</h2>
+            <p class="signup">Spend less time tracking and more time doing.</p>
+          </center>
+            <center>
+              <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+                <%= devise_error_messages! %>
+                <%= f.email_field :email, label: false, placeholder: "Email" %><br>
+                <%= f.password_field :password, label: false, placeholder: "Password" %><br>
+                <%= f.password_field :password_confirmation, label: false, placeholder: "Password Confirmation" %><br><br>
+                <div> 
+                  <%= f.submit "Sign Up", class: "btn btn-warning btn-large" %>
+                  <%= link_to "Sign In", new_user_session_path, class: "btn btn-info btn-large" %>
+                </div>
+            </center>
+          <% end %>
+        </div><br><br><br><br><br><br><br><br>
       </div>
-    </div>
   </div>
-</div>
-<div>
-  <h2>I wish my site could look better for you, but we are too busy working on what matters... Your Order management application. I hope our efforts serve to better suit your needs in the Imprinted Apparel Industry.
-  </h2>
-</div>
 <% end %>

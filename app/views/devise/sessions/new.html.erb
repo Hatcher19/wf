@@ -2,9 +2,9 @@
 
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { class: 'form-horizontal'}) do |f| %>
 
-<%= f.input :email %>
-<%= f.input :password %>
-<%= f.input :remember_me, as: :boolean %>
+<%= f.input :email, label: false, placeholder: "Email" %>
+<%= f.input :password, label: false, placeholder: "Password" %>
+<%= f.input :remember_me, label: "Remember Me", as: :boolean %>
 
 <%= f.submit "Sign in", class: "btn btn-primary" %>
 

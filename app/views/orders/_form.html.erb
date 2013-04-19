@@ -1,0 +1,17 @@
+<%= simple_nested_form_for @order do |f| %>
+  <%= f.error_notification %>
+		<div class="form-inputs">
+    	<%= f.input :project_type %>
+  	</div>
+
+  	<div class="form-inputs">
+  		<%= f.fields_for :line_items do |line_items_form| %>
+  			<%= line_items_form.number_field :quantity %>
+  			<%= line_items_form.link_to_remove "Remove" %>
+			<% end %>
+			<p><%= f.link_to_add "Add New Line Item", :line_items %></p>
+    </div>
+		<div class="form-actions">
+    	<%= f.button :submit %>
+  	</div>
+<% end %>

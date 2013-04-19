@@ -11,45 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130416134732) do
+ActiveRecord::Schema.define(:version => 20130418195642) do
 
-  create_table "projects", :force => true do |t|
-    t.string   "comments"
-    t.datetime "created_at",                  :null => false
-    t.datetime "updated_at",                  :null => false
-    t.string   "project_name"
-    t.string   "shipping_name"
-    t.string   "shipping_address"
-    t.string   "shipping_city"
-    t.string   "shipping_state"
-    t.string   "shipping_zip"
-    t.string   "ink_color_front"
-    t.string   "ink_color_back"
-    t.string   "ink_color_sleeve"
-    t.boolean  "project_type"
-    t.boolean  "new_order"
-    t.boolean  "re_order"
-    t.date     "due_date"
-    t.boolean  "need_shipping"
-    t.boolean  "print_location_front"
-    t.boolean  "print_location_front_left"
-    t.boolean  "print_location_front_right"
-    t.boolean  "print_location_back"
-    t.boolean  "print_location_back_tag"
-    t.boolean  "print_location_sleeve_left"
-    t.boolean  "print_location_sleeve_right"
-    t.string   "billing_name"
-    t.string   "billing_address"
-    t.string   "billing_city"
-    t.string   "billing_state"
-    t.string   "billing_zip"
-    t.string   "billing_email"
-    t.string   "billing_phone"
-    t.integer  "user_id"
-    t.boolean  "same_as_billing"
+  create_table "line_items", :force => true do |t|
+    t.integer  "quantity"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "order_id"
+    t.string   "style"
   end
 
-  add_index "projects", ["user_id"], :name => "index_projects_on_user_id"
+  create_table "orders", :force => true do |t|
+    t.boolean  "project_type"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.boolean  "order_type"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

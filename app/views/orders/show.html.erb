@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <b>Project type:</b>
+  	<%= @order.project_type %>
+</p>
+<p>
+  <b>Quantity:</b>
+  	<%= render 'line_items/line_item' %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>

@@ -1,10 +1,13 @@
 WF::Application.routes.draw do
-  resources :projects do
-    resources :product_line_items
-  end
+  resources :orders
+
+
+  resources :line_items
+
+  
   devise_for :users
   get 'about' => 'pages#about'
-  get 'Production' => 'projects#index'
+  get 'Order' => 'orders#index'
   root :to => 'pages#home'
 
 

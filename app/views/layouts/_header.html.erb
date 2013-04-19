@@ -4,37 +4,29 @@
  
       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
       <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-user"></span>
-        
+        <span class="icon-user icon-white" href=""></span>
       </a>
- 
       <!-- Be sure to leave the brand out there if you want it shown -->
-      
       <%= link_to "Print On Rails", root_path, class: "brand" %>
- 
       <!-- Everything you want hidden at 940px or less, place within here -->
       <div class="nav-collapse collapse">
       	<ul class="nav nav-pills">
-          <% if user_signed_in? %>
-            
-          <% else %>
-            <li><%= link_to "Home", root_path %></li>
-    				<li><%= link_to "about", about_path %></li>
-            <li><%= link_to "production", projects_path %></li>
-          <% end %>
-				</ul>
-				<ul class="nav pull-right">
-          <% if user_signed_in? %>
-          <li><%= link_to "Production", projects_path %></li> 
-          <li><%= link_to "Edit User", edit_user_registration_path %></li>
-    				<li><%= link_to "Logout", destroy_user_session_path, method: :delete   %></li>
-            
-          <% else %>
-            <li><%= link_to "Log In", new_user_session_path %></li>
-          <% end %>
-				</ul>
-      	
-				
+  				</ul>
+  				<ul class="nav pull-right">
+            <li class="dropdown, icon-user">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#"></a>
+                <%= link_to "", new_user_session_path, class: "dropdown-toggle" %>
+              <ul class="dropdown-menu">
+                <% if user_signed_in? %>
+                  <li><%= link_to "Edit User", edit_user_registration_path %></li>
+                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete   %></li>
+                <% else %>
+                  <li><%= link_to "Log In", new_user_session_path %></li>
+                  <li><%= link_to "Sign Up Now!", new_user_registration_path %><li>
+                <% end %>
+              </ul>
+            </li>
+          </ul>
         <!-- .nav, .navbar-search, .navbar-form, etc -->
       </div>
  
