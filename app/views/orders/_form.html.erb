@@ -6,7 +6,21 @@
 
   	<div class="form-inputs">
   		<%= f.fields_for :line_items do |line_items_form| %>
-  			<%= line_items_form.number_field :quantity %>
+  			<%= line_items_form.number_field :quantity, placeholder: "quantity" %>
+        <%= line_items_form.text_field :style, placeholder: "Style" %>
+        <%= line_items_form.number_field :yxs, placeholder: "Youth XSmall" %>
+        <%= line_items_form.number_field :ys, placeholder: "Youth Small" %>
+        <%= line_items_form.number_field :ym, placeholder: "Youth Medium" %>
+        <%= line_items_form.number_field :yl, placeholder: "Youth Large" %>
+        <%= line_items_form.number_field :yxl, placeholder: "Youth XL" %>
+        <%= line_items_form.number_field :xs, placeholder: "XSmall" %>
+        <%= line_items_form.number_field :s, placeholder: "Small" %>
+        <%= line_items_form.number_field :m, placeholder: "Medium" %>
+        <%= line_items_form.number_field :l, placeholder: "Large" %>
+        <%= line_items_form.number_field :xl, placeholder: "XL" %>
+        <%= line_items_form.number_field :twoxl, placeholder: "2XL" %>
+        <%= line_items_form.number_field :threexl, placeholder: "3XL" %>
+        <%= line_items_form.number_field :fourxl, placeholder: "4XL" %>
   			<%= line_items_form.link_to_remove "Remove" %>
 			<% end %>
 			<p><%= f.link_to_add "Add New Line Item", :line_items %></p>

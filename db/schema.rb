@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130418195642) do
+ActiveRecord::Schema.define(:version => 20130419143626) do
 
   create_table "line_items", :force => true do |t|
     t.integer  "quantity"
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(:version => 20130418195642) do
     t.datetime "updated_at", :null => false
     t.integer  "order_id"
     t.string   "style"
+    t.integer  "yxs"
+    t.integer  "ys"
+    t.integer  "ym"
+    t.integer  "yl"
+    t.integer  "yxl"
+    t.integer  "xs"
+    t.integer  "s"
+    t.integer  "m"
+    t.integer  "l"
+    t.integer  "xl"
+    t.integer  "twoxl"
+    t.integer  "threexl"
+    t.integer  "fourxl"
   end
 
   create_table "orders", :force => true do |t|
